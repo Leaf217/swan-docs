@@ -21,11 +21,17 @@ sidebar: nacomponent
 
 |属性名 |类型  |必填 | 默认值 |说明|
 |---- | ---- | ---- | ----|----|
-|type |String | 否 | bar| 引导组件类型，有效值： bar,tip。 |
+|type |String | 否 | bar| 引导组件类型，有效值：bar,tip。 |
 |content |String| 否 |bar: 关注小程序；<br> tip: 关注小程序，下次使用更便捷。| 引导组件文字，不支持开发者自定义。|
-|success |Function  |  否 | | 接口调用成功的回调|
+|success |Function  |  否 | | 接口调用成功的回调函数|
 |fail   | Function |   否  | | 接口调用失败的回调函数|
 |complete  |  Function |   否 | | 接口调用结束的回调函数（调用成功、失败都会执行）|
+
+**success 返回参数说明**：
+
+|参数 | 类型 | 	说明  |
+|---- | ---- | ---- |
+|action|Number|0：type 为 bar 时，用户点击了浮层引导的关闭按钮；type 为 tip 时，气泡引导展示时用户未做任何操作。<br>1：type 为 bar 时，用户点击了浮层引导的关注按钮；type 为 tip 时，气泡引导展示时点击了小程序菜单中的关注。|
 
 
 **触发时机开发者可自定义**
@@ -38,7 +44,7 @@ sidebar: nacomponent
 
 **示例**：
 
-<a href="swanide://fragment/e067d7b02af88008e08fa4bcb26906a51569378513731" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
+<a href="swanide://fragment/6c6452316faed2fd0076650d30155e811577967167157" title="在开发者工具中预览效果" target="_self">在开发者工具中预览效果</a>
 
 
 **展现形式**：
@@ -66,10 +72,10 @@ sidebar: nacomponent
         type: 'bar',
         content:'一键关注小程序',
         success: res => {
-            console.log('关注成功：', res);
+            console.log('调起关注小程序引导组件成功：', res);
         },
         fail: err => {
-            console.log('关注失败：', err);
+            console.log('调起关注小程序引导组件失败：', err);
         }
     })
 ```
@@ -95,10 +101,10 @@ swan.showFavoriteGuide({
     type: 'tip',
     content:'一键关注小程序',
     success: res => {
-        console.log('关注成功：', res);
+        console.log('调起关注小程序引导组件成功：', res);
     },
     fail: err => {
-        console.log('关注失败：', err);
+        console.log('调起关注小程序引导组件失败：', err);
     }
 })
 ```

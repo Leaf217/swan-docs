@@ -12,13 +12,14 @@ sidebar: media_image
 
 ##  属性说明 
 
-|属性名 |类型  |默认值  | 必填 |说明|
-|:---- |: ---- |: ---- |:---- |:---- |
+|属性名 |类型  |默认值  | 必填 |说明|最低版本|
+|:---- |: ---- |: ---- |:---- |:---- |:----|
 | src | String  |  | 否 |图片资源地址|
 | mode | String  | scaleToFill | 否 |图片裁剪、缩放的模式|
 |lazy-load | Boolean  |false | 否 |图片懒加载，在图片即将进入一定范围（距离当前屏50px）时才开始进行加载。|
 | binderror |HandleEvent | | 否 |当错误发生时，发布到 AppService 的事件名，事件对象 event.detail = {errMsg: 'something wrong'}|
 | bindload | HandleEvent  | | 否 |当图片载入完毕时，发布到 AppService 的事件名，事件对象 event.detail = {height:'图片高度px', width:'图片宽度px'}|
+| image-menu-prevent|Boolean|false|否| 长按图片时是否弹起默认菜单，只在初始化时有效，不能动态变更。|3.170.1|
 
 
 ###  mode 有效值  
